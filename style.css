@@ -1,0 +1,352 @@
+:root {
+    --lgreen: 106, 168, 33;
+    --dgreen: 42, 136, 17;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#wrapper { 
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    margin: auto; 
+    max-width: 1024px; }
+
+a { text-decoration: none; }
+
+
+/* ==================================== */
+/* ==================================== */
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-right: 1em;
+}
+
+nav #menu {
+    flex: 1;
+    margin-bottom: 1em;
+    text-align: center;    
+}
+
+nav #menu a {
+    margin-left: 4em;
+    color: black;
+    transition: font-size 1s;
+}
+
+
+/* ==================================== */
+
+.burger {
+    visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 3em;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+}
+
+#banner {
+    margin: 0 0 1em 0; padding: 0;
+    position: relative;
+}
+
+#banner img { 
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.on-media-show {
+    display: none;
+    position: absolute;
+    left: 0.2em;
+    bottom: 0;
+}
+.on-media-show #media-logo {
+    width: auto;
+    height: 170px;
+    margin-bottom: -1em;
+}
+
+#banner figcaption {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    background: rgba(var(--dgreen), 0.30);
+    color: white;
+    padding: 0 1em;
+    
+}
+
+#banner figcaption p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#banner figcaption span {
+    background: rgb(106,168,33);
+    padding: 0.5em;
+    border-radius: 10px;
+}
+
+#banner figcaption a {
+    color: white;
+}
+
+/* =================================== */
+/* =================================== */
+
+main section {
+    display: flex;
+    border-bottom: 4px solid rgba(var(--lgreen));
+    vertical-align: bottom;
+}
+
+main article {
+    padding-right: 1.5em;
+    flex: 2;
+}
+
+main article h2 {
+    background: url(img/nvidia-eye.png) no-repeat;
+    background-size: 1em;
+    padding-left: 1.5em;
+}
+
+/* ================== */
+main aside {
+    flex: 1;
+    background: rgba(var(--lgreen));
+    color: white;
+    text-align: center;
+    padding: 0em 1em 1em;
+    position: relative;
+}
+
+main aside img {
+    width: 150px;
+}
+
+main aside p { 
+    text-align: left; 
+}
+
+#social {
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+    padding: 0 3em;
+}
+
+#social i { 
+    color: white; 
+    font-size: 2em;
+}
+
+#collapse {
+    text-align: center;
+}
+
+#arrow {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url(img/greentri.png);
+    background-size: 30px;
+    margin-top: -6px;
+}
+
+/* =================================== */
+/* =================================== */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 2em;
+}
+
+footer form, footer #gallery {
+    flex: 1;
+}
+
+form {
+    display: block;
+}
+
+footer form input {
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+footer form input:last-child {
+    background: rgba(var(--lgreen));
+    color: white;
+    padding: 0.5em 1.5em;
+    border-color: 1px solid rgba(var(--lgreen));
+}
+
+footer section img {
+    width: 5em;
+    height: 5em;
+    object-fit: cover;
+    margin-right: 0.5em;
+}
+
+/*             BTT HOVERS              */
+/* =================================== */
+/* =================================== */
+
+#banner .btt-hover:hover, .btt-hover:hover {
+    cursor: pointer;
+    background-color: rgba(var(--dgreen));
+    box-shadow: 1px 1px 3px black;
+    transition: 1s;
+}
+
+#social i:hover {
+    color: rgb(0,0,0);
+    transition: 1s;
+}
+
+nav #menu a:hover {
+    color: rgba(var(--dgreen));
+    border-bottom: 1px solid rgba(var(--lgreen));
+    
+    transition: font-size 1s, font-weight 0.5s;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+
+/*              AT MEDIA               */
+/* =================================== */
+/* =================================== */
+
+@media screen and (max-width: 800px) {
+    .hide-media { display: none; }
+    .on-media-show { display: initial; }
+
+    .burger {
+        visibility: visible; 
+    }
+
+    article { 
+        padding: 0;
+        margin: 1em 0 1em 1em;
+    }
+    article p { text-align: justify; }
+
+    #wrapper, body {
+        margin: 0; padding: 0;
+    }
+    
+    #social {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 3em;
+    }
+    
+    main section, footer, footer form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer h3 { 
+        text-align: center; 
+        margin-top: 3em;
+    }
+
+    footer { padding: 1em; }
+
+    footer #gallery img, footer > div {
+        display: block;
+        width: 100%;
+    }
+
+    footer #partner img {
+        margin-right: 1em;
+    }
+
+    footer form input {
+        width: 100%;
+    }
+
+/* ========== NAV MOBILE ========== */
+/* ==================================== */
+    #menu {
+        display: none;
+    }
+
+    #menu-mobile {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        padding-left: 13px;
+        width: 100vw;
+        height: 350px;
+        background: rgba(0, 0, 0, 0.85);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: dropdown 1s ease-in-out;
+    }    
+
+    @keyframes dropdown{
+            0% {
+                transform: perspective(150px) rotateX(90deg);
+            }
+            50% {
+                transform: perspective(225px) rotateX(90deg) translateY(10px);
+            }
+            100% {
+                transform: perspective(300px) rotateX(90deg);
+                transform: translateY(0px);
+            }
+    }
+
+    #menu-mobile a {
+        font-family: "Roboto", sans-serif;
+        color: rgb(248, 255, 241);
+        padding: 1rem;
+        font-size: 1.6rem;
+    }
+
+    #menu-mobile a:hover {
+        color: rgba(var(--dgreen));
+    }
+
+    .close-btn {
+        position: absolute;
+        cursor: pointer;
+        z-index: 3;
+        font-size: 3em;
+        top: 1rem;
+        right: 1rem;
+        color: white;
+        transition: color(42, 136, 17) 2s;
+    }
+
+    @keyframes dropdown-btn {
+        0% {
+            transition: color (0,0,0);
+        }
+        100% {
+            transition: color (42, 136, 17);
+        }
+    }
+}
+
+/* ==================================== */

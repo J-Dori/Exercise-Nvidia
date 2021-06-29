@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/gal1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Nvidia</title>
+
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <nav>
+                <!-- <i class="fas fa-bars"></i> -->
+                <a href="/"><img id="logo" class="hide-media" src="img/logo.jpg" alt="Nvidia Logo"></a>
+                <!-- <span id="close-btt" class="closebtn">&#11205;</span> -->
+                <div id="menu">
+                    <a href="#">PRODUITS</a>
+                    <a href="#">GAMME RTX</a>
+                    <a href="#">SUPPORT &amp; PILOTES</a>
+                    <a href="#">CONTACT</a>
+                </div>
+            </nav>
+        </header>
+            <figure id="banner">
+                <span class="burger" id="burger-icon">&#11206;</span>
+                <img src="img/banner.jpg" alt="Nvidia RTX2060">
+                    <figcaption class="hide-media">
+                        <p>Plus d'informations sur la gamme GeForce RTX
+                            <span class="btt-hover"><a href="#">Découvrir &blacktriangleright;</a></span>
+                        </p>
+                    </figcaption>
+                    <div class="on-media-show">
+                        <img id="media-logo" src="img/logo-mobile.png">
+                    </div>
+                </img>
+            </figure>
+
+        <main>
+            <section>
+                <article>
+                    <h2>LA PUISSANCE, TOUT SIMPLEMENT.</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas quod magnam corrupti exercitationem. 
+                        Consectetur modi repudiandae doloribus accusamus quae ea sunt magni odit dicta, quas, voluptates, optio iusto quibusdam consequuntur. 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta minima laboriosam, repellat accusantium ea reprehenderit porro excepturi maiores molestiae doloribus asperiores similique neque perferendis deleniti saepe fuga unde architecto sed?</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas quod magnam corrupti exercitationem. 
+                        Consectetur modi repudiandae doloribus accusamus quae ea sunt magni odit dicta, quas, voluptates, optio iusto quibusdam consequuntur. 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta minima laboriosam, repellat accusantium ea reprehenderit porro excepturi maiores molestiae doloribus asperiores similique neque perferendis deleniti saepe fuga unde architecto sed?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error placeat aut, molestias eius, asperiores sapiente alias incidunt sint, odio doloremque facilis voluptatum pariatur non quas tempore? Delectus corporis dolores porro.<br>
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ad omnis dolorem, saepe rerum tempora nisi rem quia nam. Porro placeat perspiciatis consequatur quae minus ab odit, odio dolore sed.</p>
+                </article>
+                <aside>
+                    <h2>À PROPOS</h2>
+                    <img class="hide-media" src="img/flag.png" alt="Nvidia">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus quam qui quo a voluptates hic .</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                    <nav id="social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </nav>
+                </aside>
+            </section>
+            <div id="collapse">
+                <span id="arrow"></span>
+            </div>
+        </main>
+
+        <footer>
+            <form>
+                <h3>NEWSLETTER</h3>
+                <input type="text" placeholder="Nom">
+                <input type="email" placeholder="E-mail">
+                <input type="submit" value="S'inscrire" class="btt-hover">
+            </form>
+
+            <section id="gallery">
+                <h3>GALERIE</h3>
+                <div>
+                    <img src="img/gal1.jpg" alt="Galerie">
+                    <img src="img/gal2.jpg" alt="Galerie">
+                    <img src="img/gal3.jpg" alt="Galerie">
+                    <img src="img/gal4.jpg" alt="Galerie">
+                </div>
+            </section>
+
+            <section id="partner">
+                <h3>PARTENAIRES</h3>
+                <div>
+                    <img src="img/intel.png" alt="Intel">
+                    <img src="img/asus.png" alt="Asus">
+                    <img src="img/EA.png" alt="EA">
+                </div>
+            </section>
+        </footer>
+    </div>
+
+<script>
+// NavBar
+
+const burger = document.querySelector(".burger")
+// Make a copy of Menu
+const menuMobile = document.querySelector("#menu").cloneNode(true)
+// je CHANGE l'attribut id de la copie (#menu -> #menu-mobile)
+menuMobile.setAttribute("id", "menu-mobile")
+
+let closeBtn = document.createElement("span")
+closeBtn.innerHTML = "&#11205;"
+closeBtn.classList.add("close-btn")
+menuMobile.prepend(closeBtn)
+
+closeBtn.addEventListener("click", function(){
+    menuMobile.remove()
+    burger.style.visibility = "visible"
+})
+
+menuMobile.addEventListener("click", function(event){
+    if(event.target == this)//si l'évenement a pour cible la nav ELLE-MEME, c'est OK
+        menuMobile.remove()
+})
+
+burger.addEventListener("click", function(){
+    document.querySelector("body").prepend(menuMobile)
+    burger.style.visibility = "hidden"
+})
+
+window.addEventListener('resize', function(){
+    if(window.innerWidth >= 820){
+        menuMobile.remove()
+    }
+});
+</script>
+
+</body>
+</html>
